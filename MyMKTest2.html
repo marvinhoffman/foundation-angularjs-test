@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+</head>
+<body ng-app="myMKApp">
+
+
+<div ng-controller="MKSTableCtrl">
+    <input type="text" style="width: 125px;" ng-model="search.Last_Name">
+    <table>
+        <tr ng-repeat="user in users.userParamsMinusPasswords | filter:search">
+            <td>{{user.Last_Name}}</td>
+            <td>{{user.First_Name}}</td>
+            <td>{{user.UserID}}</td>
+            <td>{{user.DocID}}</td>
+        </tr>
+    </table>
+</div>
+
+<script src="lib/angular/angular.js"></script>
+<script src="STable2.js"></script>
+</body>
+</html>
